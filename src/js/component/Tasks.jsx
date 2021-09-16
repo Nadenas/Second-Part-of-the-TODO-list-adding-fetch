@@ -29,9 +29,9 @@ const Tasks = () => {
 
 	function pressEnter(event) {
 		if (event.keyCode === 13) {
-			let repeated = lists.findIndex(list => list === newTask);
+			let repeated = lists.findIndex(list => list.title === newTask);
 			if (repeated === -1) {
-				setLists([...lists, newTask]);
+				setLists([...lists, { title: newTask }]);
 				setNewTask("");
 			}
 		}
